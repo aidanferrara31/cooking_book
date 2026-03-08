@@ -1,0 +1,348 @@
+:root {
+  --bg: #0f1115;
+  --panel: #151a22;
+  --panel2: #0f141c;
+  --text: #e9eef7;
+  --muted: #a8b3c7;
+  --accent: #7aa2ff;
+  --danger: #ff6b6b;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(1200px 800px at 20% 0%, #1a2340 0%, var(--bg) 40%);
+  color: var(--text);
+}
+
+.appShell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(15, 17, 21, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 320px;
+}
+
+.brandMark {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7aa2ff, #a78bfa);
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.brandTitle {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.brandSub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* uploader styles removed (we'll add import later) */
+
+.btn,
+.btnSecondary {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn {
+  background: linear-gradient(135deg, rgba(122, 162, 255, 0.9), rgba(167, 139, 250, 0.9));
+  border: none;
+}
+
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.btn:disabled,
+.btnSecondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 18px;
+  padding: 18px;
+  min-height: 0;
+}
+
+.sidebar {
+  background: rgba(21, 26, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.sidebarHeader {
+  padding: 14px 14px 10px 14px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebarList {
+  padding: 10px;
+  overflow: auto;
+  min-height: 0;
+}
+
+.sidebarSearch {
+  width: 100%;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  outline: none;
+  margin: 0 0 10px 0;
+}
+
+.sidebarSearch::placeholder {
+  color: rgba(168, 179, 199, 0.75);
+}
+
+.sidebarGroup {
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.sidebarGroupHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 6px 6px 6px;
+}
+
+.sidebarGroupTitle {
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  color: rgba(233, 238, 247, 0.92);
+}
+
+.sidebarGroupCount {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.sidebarGroupItems {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebarEmpty {
+  padding: 6px 6px;
+}
+
+.sidebarItem {
+  width: 100%;
+  text-align: left;
+  padding: 10px 10px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.sidebarItem:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.sidebarItem.active {
+  border-color: rgba(122, 162, 255, 0.6);
+  background: rgba(122, 162, 255, 0.08);
+}
+
+.sidebarItemTitle {
+  font-weight: 650;
+  font-size: 14px;
+}
+
+.sidebarItemSub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+.bookArea {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.bookControls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pageCounter {
+  color: var(--muted);
+  font-size: 13px;
+  min-width: 90px;
+  text-align: center;
+}
+
+.errorBox {
+  background: rgba(255, 107, 107, 0.12);
+  border: 1px solid rgba(255, 107, 107, 0.25);
+  color: #ffd7d7;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.book {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(15, 20, 28, 0.85), rgba(21, 26, 34, 0.85));
+  box-shadow: 0 24px 60px var(--shadow);
+  overflow: hidden;
+}
+
+.book.busy {
+  opacity: 0.7;
+}
+
+.bookSpine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(-1px);
+}
+
+.page {
+  height: 100%;
+  padding: 18px 22px;
+  overflow: auto;
+  min-height: 0;
+}
+
+.pageTitle {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.pageImageWrap {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0 14px;
+}
+
+.pageImage {
+  max-width: 100%;
+  max-height: 260px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 40px var(--shadow);
+}
+
+.pageBody {
+  color: rgba(233, 238, 247, 0.92);
+  line-height: 1.5;
+}
+
+.recipeTwoCol {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 42px;
+  align-items: start;
+}
+
+.pageCol {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.pageCol :is(ul, ol) {
+  padding-left: 18px;
+}
+
+.pageColRight {
+  padding-left: 6px;
+}
+
+.pageBody :is(h1, h2, h3) {
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.pageBody pre {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 12px;
+  overflow: auto;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 8px 2px;
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .brand {
+    min-width: 0;
+  }
+  .recipeTwoCol {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+  }
+}
+
+
