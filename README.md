@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # cooking_book
 
 Minimal cookbook-style web app:
@@ -32,3 +33,6 @@ Recipes are persisted on your machine in `./data/recipes`.
 - If you see `Cannot connect to the Docker daemon ...`, start Docker Desktop (or your Docker daemon) and retry.
 
 
+=======
+# cooking_book
+>>>>>>> 3b4b87f7ec8ec622c6c677d2d30d048453ee0655
